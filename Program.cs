@@ -18,12 +18,22 @@
             mrGraph.AddEdge("4", "1");
 
             //displaying the neighbours
-            Dictionary<string,List<string>> keys = mrGraph.PrintGraph();
-            foreach(var vertex in keys)
+            Dictionary<string, List<string>> keys = mrGraph.PrintGraph();
+            foreach (var vertex in keys)
             {
-                Console.WriteLine("vertex: "+ vertex.Key);
-                Console.WriteLine("Neighbours: "+ string.Join(", ",vertex.Value));
+                Console.WriteLine("\nvertex: " + vertex.Key);
+                Console.WriteLine("has neighbours: " + string.Join(", ", vertex.Value));
             }
+            //--------------------------DFS---------------------------
+            depthFirstGraph DFS = new depthFirstGraph();
+
+            DFS.AddEdge("A", "B");
+            DFS.AddEdge("A", "C");
+            DFS.AddEdge("B", "E");
+            DFS.AddEdge("C", "D");
+            Console.Write("\nDFS: ");
+            DFS.DFS("A");
+
         }
     }
 }
